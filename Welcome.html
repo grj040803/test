@@ -1,0 +1,157 @@
+<!DOCTYPE html> <!--这个是为了防止在不同的浏览器中产生奇怪的效果，必须在第一行-->
+<html lang="en"> <!--这个是浏览器这个是网页文档--> <!--lang="en"指当前的语言是英文-->
+
+<head> <!--这个不会显示给用户-->
+    <meta charset="UTF-8"> <!--meta标签是一个单标签，用来描述一个html网页文档的属性关键词等-->
+    <!--这句话的意思是所使用的语言是UTF-8-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>龚利国</title> <!--这个是网页的标题-->
+</head> <!--只有h1到h6，没有h7及以上-->
+
+<body>
+    <h1 align="left">一级标题</h1>
+    <h2 align="center">二级标题</h2>
+    <h3 align="right">三级标题</h3>
+    <h4>四级标题</h4>
+    <h5>五级标题</h5>
+    <h6>六级标题</h6>
+    <p>我是一个段落标签</p>
+    <p>如果希望在不产生一个<br>新段落的情况下进行换行</p>
+    <hr color="red" width="300px" size="20px" align="left">
+    <hr color="green" width="800px" size="60px">
+    <hr color="red" width="500px" size="10px" align="right">
+    <!--这是产生一条水平线,align如果不写默认是居中-->
+    <img src="glg.jpg" alt="黑胡子海贼团" width="300px" , height="200px" , title="黑胡子"> <!--图片必须和html文件在同一个文件夹下-->
+    <!--alt的功能是当图片无法显示的时候，显示alt中的内容,title的功能是当鼠标放在图片上，显示图片的标题内容-->
+    <img src="D:\Latex\29.jpg"> <!--也可以这样搞图片-->
+    <img src="http://iwenwiki.com/api/newworld/images/n1.png"> <!--也可以这样搞图片-->
+    <a href="https://www.baidu.com">
+        <img src="D:\Latex\30.png" width="300px" , height="200px">
+    </a>
+    <!--地址前面的https://www.必须写完整-->
+    <a href="https://www.baidu.com">
+        龚利国 <!--超链接里面可以是任何内容，比如文字、图片-->
+    </a>
+
+    <!--以下是常用文本标签-->
+    <!--<em>是着重定义文字，<b>是定义粗体文本，<i>定义斜体字，<strong>定义加重语气，<del>定义删除子，<span>方便之后css介入-->
+    <p>
+        <em>vegetable</em>
+        <i>vegetable</i>
+        <b>vegetable</b>
+        <br>
+        我喜欢吃
+        <strong>vegetable</strong>
+        <del>vegetable</del>
+        <span>vegetable</span>
+    </p>
+
+    <!--以下是有序列表-->
+    <!--有序列表始于<ol>标签，列表项始于<li>标签-->
+    <ol type="1">
+        <li>蔡端</li>
+        <li>蔡伟</li>
+        <li>蔡悦</li>
+    </ol>
+    <!--<ol>的属性type拥有以下这些选项1.(1,2,3...) 2.(a,b,c...) 3.(A,B,C...) 4.(i,ii,iii...) 5.(I,II,III...)-->
+    <ol type="a">
+        <li>蔡端</li>
+        <li>蔡伟</li>
+        <li>蔡悦</li>
+    </ol>
+
+    <ol type="a">
+        <li>水果</li>
+        <li>
+            蔬菜
+            <ol>
+                <li>白菜</li>
+                <li>黄瓜</li>
+            </ol>
+        </li>
+        <li>肉类</li>
+    </ol>
+
+    <!--以下是有序列表-->
+    <!--无序列表始于<ul>标签，列表项始于<li>标签-->
+    <ul type="square">
+        <li>苹果
+            <ul type="circle">
+                <li>红富士</li>
+                <li>青苹果</li>
+            </ul>
+        </li>
+        <li>橘子</li>
+        <li>香蕉</li>
+    </ul>
+    <!--disc默认实心圆，circle空心圆，square小方块，none不显示-->
+
+    <!--以下是表格-->
+    <!--保留左上，删除右下-->
+    <table border="1" width="400px" height="200px">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <!--以下是合并单元格-->
+    <table border="1" width="400px" height="200px">
+        <tr>
+            <td colspan="2">1</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td rowspan="2">5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>9</td>
+        </tr>
+    </table>
+   
+    <!--接下来是表单，有三个基本组成部分：表单标签，表单域，表单按钮-->
+    <!--action是服务器地址，name是表单名称-->
+    <!--<form action="服务器url" method="get"或者method="post" name="myform"></form>-->
+    <!--method中get提交的数据url,post用来提交大量数据-->
+    <form action="url" method="get" name="myform"></form>
+    <form>
+        <input>
+        <input type="submit">
+    </form>
+
+    <form >
+        用户名
+        <input type="text">
+    </form>
+
+    <form >
+        用户名
+        <input type="password" name="pwd"> <!--密码字段字符不会明文显示，而是以星号或者圆点代替-->
+    </form>
+    <form>
+        <input type="text">
+        <input type="submit" value="登录">
+    </form>
+
+    <header></header>
+    <nav></nav>
+    <article>
+        <section></section>
+    </article>
+    <aside></aside>
+    <footer></footer>
+
+</html>
