@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+
+            /* width: 300px;
+            height: 150px; */
+            /* position: absolute;
+            left: 50%;
+            top: 300px;
+            transform: translate(-50%, -50%); */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+
+        #question_number {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        #smallcontainer{
+            display: flex;
+            justify-content: center;
+        }
+        #inputbox {
+            /* margin-left:200px; */
+            font-size: 25px;
+        }
+
+        #delete {
+            height: 30px;
+            position: absolute;
+            right: 200px;
+        }
+
+        #delete:hover {
+            cursor: pointer;
+        }
+
+        #fill {
+            height: 30px;
+            width: 800px;
+            text-align: center;
+            font-size: 15px;
+            color: gray;
+        }
+
+        #picture1 {
+            width: 800px;
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #button0 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            font-size: 25px;
+            margin-top: 2px;
+        }
+
+        #button1 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            font-size: 25px;
+            margin-left: 320px;
+        }
+
+        #button2 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+        #button3 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+        #button4 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            font-size: 25px;
+            margin-top: 2px;
+            margin-left: 320px;
+        }
+
+        #button5 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            font-size: 25px;
+            margin-top: 2px;
+        }
+
+        #button6 {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            font-size: 25px;
+            margin-top: 2px;
+        }
+
+        #button7 {
+            margin-top: 2px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            font-size: 25px;
+            margin-left: 320px;
+        }
+
+        #button8 {
+            margin-top: 2px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+        #button9 {
+            margin-top: 2px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+        #reset {
+            margin-top: 2px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            vertical-align: top;
+            margin-left: 320px;
+        }
+
+        #picture3 {
+            width: 20px;
+        }
+
+        #OK {
+            margin-top: 2px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            vertical-align: top;
+            font-size: 25px;
+            color: rgb(102, 139, 179);
+        }
+
+        #OK:hover {
+            cursor: pointer;
+        }
+
+        #reset:hover {
+            cursor: pointer;
+        }
+
+        #button0:hover {
+            cursor: pointer;
+        }
+
+        #button1:hover {
+            cursor: pointer;
+        }
+
+        #button2:hover {
+            cursor: pointer;
+        }
+
+        #button3:hover {
+            cursor: pointer;
+        }
+
+        #button4:hover {
+            cursor: pointer;
+        }
+
+        #button5:hover {
+            cursor: pointer;
+        }
+
+        #button6:hover {
+            cursor: pointer;
+        }
+
+        #button7:hover {
+            cursor: pointer;
+        }
+
+        #button8:hover {
+            cursor: pointer;
+        }
+
+        #button9:hover {
+            cursor: pointer;
+        }
+
+        #current_correct_answer {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        #average {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        #human_voice {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        #environment_voice {
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="question_number">1 of 23</div>
+        <img src="picture1.png" id="picture1">
+        <br>
+        <div id="smallcontainer">
+        <span id="inputbox">Inputted numbers:</span>
+        <img src="picture2.jpg" id="delete">
+        </div>
+        <div id="fill"><span id="remind">Enter 3 digits. If unsure, guess.</span></div>
+        <button id="button1">1</button>
+        <button id="button2">2</button>
+        <button id="button3">3</button>
+        <br>
+        <button id="button4">4</button>
+        <button id="button5">5</button>
+        <button id="button6">6</button>
+        <br>
+        <button id="button7">7</button>
+        <button id="button8">8</button>
+        <button id="button9">9</button>
+        <br>
+        <button id="reset">
+            <img src="picture3.png" id="picture3">
+        </button>
+        <button id="button0">0</button>
+        <button id="OK">OK</button>
+        <br>
+        <div id="current_correct_answer"></div>
+        <div id="human_voice">当前人声:65dB</div>
+        <div id="environment_voice">当前言语噪声:65dB</div>
+        <div id="average"></div>
+    </div>
+    <!-- <button id="myButton1">正确</button>
+    <button id="myButton2">错误</button> -->
+    <script>
+        var a = document.getElementById("human_voice");
+        var b = document.getElementById("environment_voice");
+        var c = document.getElementById("average");
+        var d = document.getElementById("question_number");
+        var correct_number1 = Math.floor(Math.random() * 10);
+        var correct_number2 = Math.floor(Math.random() * 10);
+        var guessed_number_collection = [];
+        while (correct_number1 == correct_number2) {
+            correct_number2 = Math.floor(Math.random() * 10);
+        }
+        var correct_number3 = Math.floor(Math.random() * 10);
+        while (correct_number1 == correct_number3 || correct_number2 == correct_number3) {
+            correct_number3 = Math.floor(Math.random() * 10);
+        }
+        var correct_nubmer_collection = [correct_number1, correct_number2, correct_number3];
+
+        c.hidden = true;
+        var arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        // a.innerHTML="当前人声:"+b+"dB"
+        var human = 65;
+        var environment = 65;
+        var i = 0;
+
+        var button0 = document.getElementById("button0");
+        button0.addEventListener("click", Request0);
+        var button1 = document.getElementById("button1");
+        button1.addEventListener("click", Request1);
+        var button2 = document.getElementById("button2");
+        button2.addEventListener("click", Request2);
+        var button3 = document.getElementById("button3");
+        button3.addEventListener("click", Request3);
+        var button4 = document.getElementById("button4");
+        button4.addEventListener("click", Request4);
+        var button5 = document.getElementById("button5");
+        button5.addEventListener("click", Request5);
+        var button6 = document.getElementById("button6");
+        button6.addEventListener("click", Request6);
+        var button7 = document.getElementById("button7");
+        button7.addEventListener("click", Request7);
+        var button8 = document.getElementById("button8");
+        button8.addEventListener("click", Request8);
+        var button9 = document.getElementById("button9");
+        button9.addEventListener("click", Request9);
+
+        var e = document.getElementById("reset");
+        e.addEventListener("click", reset);
+
+        var f = document.getElementById("current_correct_answer");
+        f.innerHTML = "当前正确答案:" + correct_number1.toString() + correct_number2.toString() + correct_number3.toString();
+
+        var g = document.getElementById("OK");
+        g.disabled = true;
+        g.addEventListener("click", ok);
+
+        var h = document.getElementById("delete");
+        h.disabled = true;
+        h.addEventListener("click", del);
+
+        var k = document.getElementById("inputbox");
+        var l = document.getElementById("remind");
+        function answer_correct() {
+            if (i < 3) {
+                if (human - environment - 4 >= 0) {
+                    environment = environment + 4;
+                    b.innerHTML = "当前言语噪声:" + environment + "dB";
+                }
+                else {
+                    human = human - 4;
+                    a.innerHTML = "当前人声:" + human + "dB"
+                }
+            }
+            else if (i >= 3 && i < 22) {
+                if (human - environment - 2 >= 0) {
+                    environment = environment + 2;
+                    b.innerHTML = "当前言语噪声:" + environment + "dB";
+                    arr[i - 3] = human - environment;
+                }
+                else {
+                    human = human - 2;
+                    a.innerHTML = "当前人声:" + human + "dB"
+                    arr[i - 3] = human - environment;
+                }
+            }
+            else {
+                arr[i - 3] = human - environment;
+                var sum = 0;
+                for (var j = 0; j < 19; j++) {
+                    sum = sum + arr[j];
+                }
+                c.innerHTML = "Average SNR:" + (sum / 19);
+                c.hidden = false;
+            }
+            if (i < 23)
+                d.innerHTML = (i + 1) + " of 23";
+            else {
+                d.innerHTML = "23 of 23";
+                g.disabled = true;
+                ban();
+            }
+        }
+        function answer_wrong() {
+            if (i < 3) {
+                if (human - environment + 2 <= 0) {
+                    human = human + 2;
+                    a.innerHTML = "当前人声:" + human + "dB";
+                }
+                else {
+                    environment = environment - 2;
+                    b.innerHTML = "当前言语噪声:" + environment + "dB";
+                }
+            }
+            else if (i < 22 && i >= 3) {
+                if (human - environment + 2 <= 0) {
+                    human = human + 2;
+                    a.innerHTML = "当前人声:" + human + "dB";
+                    arr[i - 3] = human - environment;
+                }
+                else {
+                    environment = environment - 2;
+                    b.innerHTML = "当前言语噪声:" + environment + "dB";
+                    arr[i - 3] = human - environment;
+                }
+            }
+            else {
+                arr[i - 3] = human - environment;
+                var sum = 0;
+                for (var j = 0; j < 19; j++) {
+                    sum = sum + arr[j];
+                }
+                c.innerHTML = "Average SNR:" + (sum / 19);
+                c.hidden = false;
+            }
+            i++;
+            if (i < 23)
+                d.innerHTML = (i + 1) + " of 23";
+            else {
+                d.innerHTML = "23 of 23";
+                g.disabled = true;
+                l.hidden = true;
+                ban();
+            }
+        }
+
+        function reset() {
+            human = 65;
+            environment = 65;
+            i = 0;
+            d.innerHTML = "1 of 23";
+            a.innerHTML = "当前人声:65dB";
+            b.innerHTML = "当前言语噪声:65dB";
+            k.innerHTML = "Inputted numbers:";
+            h.disabled = true;
+            c.innerHTML = "";
+            g.disabled = true;
+            random_number1();
+            correct_nubmer_collection = [correct_number1, correct_number2, correct_number3];
+            f.innerHTML = "当前正确答案:" + correct_number1.toString() + correct_number2.toString() + correct_number3.toString();
+            allow();
+            l.hidden = false;
+        }
+
+        function random_number1() {
+            correct_number1 = Math.floor(Math.random() * 10);
+            correct_number2 = Math.floor(Math.random() * 10);
+            while (correct_number1 == correct_number2) {
+                correct_number2 = Math.floor(Math.random() * 10);
+            }
+            correct_number3 = Math.floor(Math.random() * 10);
+            while (correct_number1 == correct_number3 || correct_number2 == correct_number3) {
+                correct_number3 = Math.floor(Math.random() * 10);
+            }
+        }
+
+        function random_number2() {
+            random_number1();
+            if ((correct_number1 == correct_nubmer_collection[3 * i - 3]
+                && correct_number2 == correct_nubmer_collection[3 * i - 2]
+                && correct_number3 == correct_nubmer_collection[3 * i - 1])) {
+                random_number2();
+            }
+        }
+
+        function number_reset() {
+            guessed_number_collection = [];
+            random_number2();
+            correct_nubmer_collection.push(correct_number1);
+            correct_nubmer_collection.push(correct_number2);
+            correct_nubmer_collection.push(correct_number3);
+            if (i < 23) { f.innerHTML = "当前正确答案:" + correct_number1.toString() + correct_number2.toString() + correct_number3.toString(); }
+        }
+
+        function Request0() {
+            var length = guessed_number_collection.push(0);
+            simplify(length);
+        }
+        function Request1() {
+            var length = guessed_number_collection.push(1);
+            simplify(length);
+        }
+        function Request2() {
+            var length = guessed_number_collection.push(2);
+            simplify(length);
+        }
+        function Request3() {
+            var length = guessed_number_collection.push(3);
+            simplify(length);
+        }
+        function Request4() {
+            var length = guessed_number_collection.push(4);
+            simplify(length);
+        }
+        function Request5() {
+            var length = guessed_number_collection.push(5);
+            simplify(length);
+        }
+        function Request6() {
+            var length = guessed_number_collection.push(6);
+            simplify(length);
+        }
+        function Request7() {
+            var length = guessed_number_collection.push(7);
+            simplify(length);
+        }
+        function Request8() {
+            var length = guessed_number_collection.push(8);
+            simplify(length);
+        }
+        function Request9() {
+            var length = guessed_number_collection.push(9);
+            simplify(length);
+        }
+
+        function ok() {
+            l.hidden = false;
+            h.disabled = true;
+            k.innerHTML = "Inputted numbers:";
+            var guessed_number3 = guessed_number_collection.pop();
+            var guessed_number2 = guessed_number_collection.pop();
+            var guessed_number1 = guessed_number_collection.pop();
+            allow();
+            if (guessed_number1 == correct_number1 && guessed_number2 == correct_number2 && guessed_number3 == correct_number3) {
+                answer_correct();
+                number_reset();
+                //console.log("回答正确");
+            }
+            else {
+                answer_wrong();
+                number_reset();
+                //console.log("回答错误");
+            }
+        }
+        function del() {
+            l.hidden = false;
+            guessed_number_collection.pop();
+            // if (guessed_number_collection.length == 3) {
+            //     g.disabled = false;
+            //     ban();
+            // }
+            if (guessed_number_collection.length == 2) {
+                g.disabled = true;
+                allow();
+                k.innerHTML = "Inputted numbers:" + guessed_number_collection[0].toString() + guessed_number_collection[1].toString();
+            }
+            else if (guessed_number_collection.length == 1) {
+                g.disabled = true;
+                allow();
+                k.innerHTML = "Inputted numbers:" + guessed_number_collection[0].toString();
+            }
+            else {
+                h.disabled = true;
+                g.disabled = true;
+                allow();
+                k.innerHTML = "Inputted numbers:";
+            }
+        }
+
+        function ban() {
+            button0.disabled = true;
+            button1.disabled = true;
+            button2.disabled = true;
+            button3.disabled = true;
+            button4.disabled = true;
+            button5.disabled = true;
+            button6.disabled = true;
+            button7.disabled = true;
+            button8.disabled = true;
+            button9.disabled = true;
+        }
+        function allow() {
+            button0.disabled = false;
+            button1.disabled = false;
+            button2.disabled = false;
+            button3.disabled = false;
+            button4.disabled = false;
+            button5.disabled = false;
+            button6.disabled = false;
+            button7.disabled = false;
+            button8.disabled = false;
+            button9.disabled = false;
+        }
+
+        function simplify(some_number) {
+            h.disabled = false;
+            if (some_number == 3) {
+                l.hidden = true;
+                g.disabled = false;
+                ban();
+                k.innerHTML = "Inputted numbers:" + guessed_number_collection[0].toString() + guessed_number_collection[1].toString() + guessed_number_collection[2].toString();
+            }
+            else if (some_number == 2) {
+                l.hidden = false;
+                g.disabled = true;
+                k.innerHTML = "Inputted numbers:" + guessed_number_collection[0].toString() + guessed_number_collection[1].toString();
+            }
+            else if (some_number == 1) {
+                l.hidden = false;
+                g.disabled = true;
+                k.innerHTML = "Inputted numbers:" + guessed_number_collection[0].toString();
+            }
+            else {
+                l.hidden = false;
+                g.disabled = true;
+                k.innerHTML = "Inputted numbers:"
+            }
+        }
+    </script>
+</body>
+
+</html>
